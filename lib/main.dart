@@ -1,25 +1,20 @@
+import 'package:flash_chat/screens/welcome._screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const FlashChat());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class FlashChat extends StatelessWidget {
+  const FlashChat({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
+    return MaterialApp(
+      theme: ThemeData.dark().copyWith(
+        textTheme: const TextTheme(
+          bodyText1: TextStyle(color: Colors.black54),
+        ),
+      ),
+      home: WelcomeScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
